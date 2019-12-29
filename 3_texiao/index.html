@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>导航和轮播</title>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+        <!--tupian-->
+		<style type="text/css">
+			*{ margin:0; padding:0;}
+			
+			#wrap{
+				width:1200px;
+				height:360px;
+				margin:100px auto;
+			}
+
+			#wrap ul li{
+				width:230px;
+				height:360px;
+				float:left;
+				list-style:none;
+				margin-right:12px;
+				position:relative;
+				overflow:hidden;
+			}
+			#wrap ul li img{
+				display:block;
+			}
+			#wrap ul li .cover{
+				width:230px;
+				height:360px;
+				position:absolute;
+				top:0px;
+				left:230px;
+				background:url(img/new-bg.png);
+			}
+			#wrap ul li .cover p{
+				font-size:14px;
+				font-family:'Microsoft yahei';
+				color:#fff;
+				text-align:center;
+			}
+			#wrap ul li .cover p.p1{
+				padding-top:160px;
+			}
+
+		</style>
+		
+		<!--logo-->
+		<style type='text/css'>
+			*{ margin:0; padding:0;}
+			
+			#wrap1{
+				width:520px;
+				height:62px;
+				margin:100px auto;
+			}
+			#show{
+				width:462px;
+				height:62px;
+				overflow:hidden;
+				float:left;
+				margin:0 8px;
+			}
+			#wrap1 ul{
+				width:1000%;
+				height:61px;
+				margin-left:0;
+			}
+			#wrap1 ul li{
+				list-style:none;
+				float:left;
+				width:132px;
+				height:59px;
+				border:1px solid #ddd;
+				margin:0 10px;
+			}
+			#prev,#next{
+				width:20px;
+				height:59px;
+				float:left;
+				cursor:pointer;
+			}
+
+		</style>
+		
+		<!--youku-->
+		
+		<style type='text/css'>
+			*{ margin:0; padding:0;}
+			
+			#wrap2{
+				width:970px;
+				height:300px;
+				margin:50px auto;
+				position:relative;
+				overflow:hidden;
+			}
+			
+			#pic{
+				width:970px;
+				height:270px;
+				position:relative;
+			}
+			#pic li{
+				list-style:none;
+				width:0;
+				height:0;
+				position:absolute;
+				top:135px;
+				left:485px;
+				opacity:0;
+				filter:alpha(opacity=0);
+			}
+			#pic li span{
+				width:100%;
+				height:100%;
+				position:absolute;
+				top:0;
+				left:0;
+				filter:alpha(opacity=50);
+				background:rgba(0,0,0,.5);
+				display:block;
+			}
+			#pic li img{
+				width:100%;
+				height:100%;
+			}
+			#pic li.l1{ width:640px; height:270px; left:165px; top:0px; z-index:10;opacity:1;
+				filter:alpha(opacity=100);}
+
+			#pic li.l2{ width:530px; height:220px; left:440px; top:25px; z-index:9;opacity:1;
+				filter:alpha(opacity=100);}
+			#pic li.l0{ width:530px; height:220px; left:0px; top:25px; z-index:9;opacity:1;
+				filter:alpha(opacity=100);}
+
+			#pic li.l3{ width:300px; height:150px; left:970px; top:60px; z-index:8;}
+			#pic li.l9{ width:300px; height:150px; left:-300px; top:60px; z-index:8;}
+
+			#btn div{
+				width:45px;
+				height:45px;
+				position:absolute;
+				top:50%;
+				margin-top:-22px;
+				z-index:999;
+				cursor:pointer;
+			}
+			#left{
+				background:url(img/left.png);
+				left:0;
+			}
+			#right{
+				background:url(img/right.png);
+				right:0;
+			}
+			#tab{
+				width:200px;
+				height:10px;
+				padding:10px 0;
+				position:absolute;
+				left:50%;
+				margin-left:-100px;
+				bottom:0;
+			}
+			#tab li{
+				list-style:none;
+				float:left;
+				width:10px;
+				height:10px;
+				margin:0 5px;
+				border-radius:100%;
+				background:#bbb;
+				cursor:pointer;
+			}
+			#tab li.on{
+				background:#0cf;
+			}
+
+		</style>
+		<!--youku end-->
+		
+	
+	</head>
+
+	<body>
+
+	
+		<!--nav-->
+		<div class="nav">
+			<div class="wrap">
+				<a href="#" class="logo">
+					<img src="images/logo.jpg">
+				</a>
+				<ul class="menu">
+					
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">我的订单</a>
+					</li>
+					<li>
+						<a href="#">购物车</a>
+					</li>
+					<li>
+						<a href="#">客服中心</a>
+					</li>
+					<li>
+						<a href="#">个人中心</a>
+					</li>
+					<li>
+						<a href="#">更多精选</a>
+					</li>
+				</ul>
+				<div class="search-box">
+					<form action="">
+						<input name="url" class="search-url" value="请输入" type="text">&nbsp;
+						<input name="" class="search-btn" value="搜索" type="submit">
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--banner-->
+		<div class="banner">
+			<div class="swiper-container gallery-top">
+				<div class="swiper-wrapper">
+					<a class="swiper-slide" href="#"></a>
+					<a class="swiper-slide" href="#"></a>
+					<a class="swiper-slide" href="#"></a>
+					<a class="swiper-slide" href="#"></a>
+					<a class="swiper-slide" href="#"></a>
+					<a class="swiper-slide" href="#"></a>
+				</div>
+				<!-- Add Pagination -->
+				<div class="wrap pr">
+					<div class="gallery-left pa">
+						<h3>品质生活</h3>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<!-- Add Arrows -->
+				<div class="swiper-button-next swiper-button-white"></div>
+				<div class="swiper-button-prev swiper-button-white"></div>
+			</div>
+
+		</div>
+		<!--banner end-->
+		
+		
+		<div id="wrap">
+			<ul>
+				<li>
+					<img src="img/1.jpg" alt="" />
+					<div class="cover">
+						<p class="p1">春夏新品 上新无限</p>
+						<p>点击进入</p>
+					</div>
+				</li>
+				<li>
+					<img src="img/2.jpg" alt="" />
+					<div class="cover">
+						<p class="p1">夏装新品发布 8折起</p>
+						<p>点击进入</p>
+					</div>
+				</li>
+				<li>
+					<img src="img/3.jpg" alt="" />
+					<div class='cover'>
+						<p class='p1'>春装特惠 买二送一</p>
+						<p>点击进入</p>
+					</div>
+				</li>
+				<li>
+					<img src="img/4.jpg" alt="" />
+					<div class='cover'>
+						<p class='p1'>春夏新品 低至158</p>
+						<p>点击进入</p>
+					</div>
+				</li>
+				<li style="margin-right:0px;">
+					<img src="img/5.jpg" alt="" />
+					<div class='cover'>
+						<p class='p1'>美洲野牛旗舰店</p>
+						<p>商务休闲新境界</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div id="wrap1">
+			<div id='prev'><img src='img/prev.png' /></div>
+			<div id='show'>
+				<ul>
+					<li><img src='img/1.png' /></li>
+					<li><img src='img/2.png' /></li>
+					<li><img src='img/3.png' /></li>
+					<li><img src='img/4.png' /></li>
+					<li><img src='img/1.png' /></li>
+					<li><img src='img/2.png' /></li>
+					<li><img src='img/3.png' /></li>
+
+				</ul>
+			</div>
+			<div id='next'><img src='img/next.png' /></div>
+		</div>
+		
+		
+		<div id="wrap2">
+			<div id='pic'>
+				<li class='l1'><img src="img/11.jpg" alt="" /></li>
+				<li class='l2'><img src="img/22.jpg" alt="" /></li>
+				<li class='l3'><img src="img/33.jpg" alt="" /></li>
+				<li><img src="img/44.jpg" alt="" /></li>
+				<li><img src="img/55.jpg" alt="" /></li>
+				<li><img src="img/6.jpg" alt="" /></li>
+				<li><img src="img/7.jpg" alt="" /></li>
+				<li><img src="img/8.jpg" alt="" /></li>
+				<li class='l9'><img src="img/9.jpg" alt="" /></li>
+				<li class='l0'><img src="img/10.jpg" alt="" /></li>
+			</div>
+			<div id="btn">
+				<div id="left"></div>
+				<div id="right"></div>
+			</div>
+			<div id="tab">
+				<li class='on'></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</div>
+		</div>
+
+		
+		
+		<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var galleryTop = new Swiper('.gallery-top', {
+				pagination: '.swiper-pagination',
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev',
+				paginationClickable: true,
+				autoplay: 5000,
+				paginationBulletRender: function(index, className) {
+					switch(index) {
+						case 0:
+							name = '超市';
+							break;
+						case 1:
+							name = '数码电器';
+							break;
+						case 2:
+							name = '奢品大牌';
+							break;
+						case 3:
+							name = '全球好货';
+							break;
+						case 4:
+							name = '服饰美容';
+							break;
+						case 5:
+							name = '排行榜';
+							break;
+						default:
+							name = '';
+					}
+					return '<span class="' + className + '">' + name + '</span>';
+				}
+			});
+		</script>
+		
+		<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+		<script type="text/javascript">
+			(function(){
+				
+				var $li = $('#wrap ul li');
+
+				$li.hover(function(ev){
+
+					move.call(this , ev , true);
+
+				},function(ev){
+					move.call(this , ev , false);
+				});
+
+
+				function move( ev , bool ){
+					var top = $(this).offset().top;
+					var bottom  = top + $(this).height();
+					var left = $(this).offset().left;
+					var right = left + $(this).width();
+
+					var x = ev.pageX,
+						y = ev.pageY;
+					
+					var sT = Math.abs(y - top),
+						sB = Math.abs(y - bottom),
+						sL = Math.abs(x - left),
+						sR = Math.abs(x - right);
+					
+					var a = Math.min( sT , sB , sL , sR );
+
+					switch ( a )
+					{
+						case sT:
+							if ( bool )
+							{
+								$(this).find('.cover').css({
+									left : 0,
+									top : '-360px'
+								}).stop().animate({
+									top : 0
+								},200);
+							}
+							else
+							{
+								$(this).find('.cover').stop().animate({
+									top : '-360px'
+								},200);
+							}
+							
+							break;
+
+						case sB:
+							if ( bool )
+							{
+								$(this).find('.cover').css({
+									left : 0,
+									top : '360px'
+								}).stop().animate({
+									top : 0
+								},200);
+							}
+							else
+							{
+								$(this).find('.cover').stop().animate({
+									top : '360px'
+								},200);
+							}
+							break;
+						
+						case sL:
+							
+							if ( bool )
+							{
+								$(this).find('.cover').css({
+									top : 0,
+									left : '-230px'
+								}).stop().animate({
+									left : 0
+								},200);
+							}
+							else
+							{
+								$(this).find('.cover').stop().animate({
+									left : '-230px'
+								},200);
+							}
+							
+							break;
+						
+						case sR:
+							if ( bool )
+							{
+								$(this).find('.cover').css({
+									top : 0,
+									left : '230px'
+								}).stop().animate({
+									left : 0
+								},200);
+							}
+							else
+							{
+								$(this).find('.cover').stop().animate({
+									left : '230px'
+								},200);
+							}
+							break;
+					}
+					
+					//console.log( '距离顶部:'+sT+'   距离底部:'+sB+'   距离左边:'+sL+'   距离右边:'+sR )
+				};
+
+			})();
+		</script>
+		
+		
+		<script type="text/javascript" src='js/jquery-1.12.1.min.js'></script>
+		<script type="text/javascript">
+			(function(){
+				var $next = $('#next'),
+					$prev = $('#prev'),
+					$ul = $('#show ul'),
+					$li = $('#show ul li'),
+					$wrap = $('#wrap'),
+					clickTime = 0,
+					timer = null,
+					index = 0;
+			
+				$next.click(function(){
+					if ( new Date() - clickTime > 500 )
+					{
+						clickTime = new Date();
+						index ++;
+						$ul.stop().animate({
+							marginLeft : -152*index + 'px'
+						}, 500 , function(){
+							if ( index == 4 )
+							{
+								$ul.css('marginLeft' , 0);
+								index = 0;
+							}
+						});
+					}
+				});
+
+				$prev.click(function(){
+					if ( new Date() - clickTime > 500 )
+					{
+						clickTime = new Date();
+						if ( index == 0 )
+						{
+							$ul.css('marginLeft' , -152*4 + 'px');
+							index = 4;
+						};
+						index --;
+						$ul.stop().animate({
+							marginLeft : index*-152+'px'
+						},500);
+					}
+				});
+
+				$wrap.hover(function(){
+					clearInterval( timer );
+				},function(){
+					auto();
+				});
+			
+				auto();
+				function auto(){
+					timer = setInterval(function(){
+						index ++;
+						$ul.stop().animate({
+							marginLeft : -152*index + 'px'
+						}, 500 , function(){
+							if ( index == 4 )
+							{
+								$ul.css('marginLeft' , 0);
+								index = 0;
+							}
+						});
+					},2000);
+				}
+			})();
+			
+
+		</script>
+		
+		
+		<script type="text/javascript" src='js/jquery-1.12.1.min.js'></script>
+		<script type="text/javascript">
+			
+			(function(){
+				var $left = $('#left');
+				var $right = $('#right');
+				var $li = $('#pic li');
+				var $tabLi = $('#tab li');
+				var index = 0;
+
+				$li.append('<span></span>');
+				$('#pic li span').eq(0).css('display' , 'none');
+				
+				var arrW=[],arrH=[],arrL=[],arrT=[],arrZ=[],arrS=[],arrO=[];
+				var nowTime = 0;
+				$right.click(function(){
+					if ( new Date() - nowTime > 500 )
+					{
+						nowTime = new Date();
+						index ++;
+						index %= $li.length;
+						$tabLi.eq(index).addClass('on').siblings().removeClass('on');
+						fn( $(this).index() );
+					}
+					
+				});
+
+				$left.click(function(){
+					if ( new Date() - nowTime > 500 )
+					{
+						nowTime = new Date();
+						index --;
+						if(index<0)index=$li.length-1;
+						$tabLi.eq(index).addClass('on').siblings().removeClass('on');
+						fn( $(this).index() );
+					}
+				});
+
+				$tabLi.click(function(){
+					$(this).addClass('on').siblings().removeClass('on');
+					var nowIndex = $(this).index();
+					var x = nowIndex - index;
+					if ( x == 1 || x == -($li.length-1) )
+					{
+						fn( true );
+						index = nowIndex;
+					}
+					else if ( x == -1 || x == $li.length-1 )
+					{
+						fn( false );
+						index = nowIndex;
+					}
+					else if ( nowIndex != index )
+					{
+						$li.each(function(i){
+							arrW[i] = $(this).css('width');
+							arrH[i] = $(this).css('height');
+							arrL[i] = $(this).css('left');
+							arrT[i] = $(this).css('top');
+							arrZ[i] = $(this).css('zIndex');
+							arrS[i] = $(this).find('span').css('display');
+							arrO[i] = $(this).css('opacity');
+						});
+						$li.each(function(i){
+							$(this).animate({
+								width : 0,
+								height : 0,
+								opacity : 0,
+								left : '485px',
+								top : '135px'
+							},300);
+						});
+						setTimeout(function(){
+							$li.each(function(i){
+								var a = i - (nowIndex - index);
+								if(a<0)a+=$li.length;
+								if(a>=$li.length)a-=10;
+								$(this).find('span').css('display' , arrS[a]);
+								$(this).css('zIndex' , arrZ[a]).animate({
+									width : arrW[a],
+									height : arrH[a],
+									left : arrL[a],
+									top : arrT[a],
+									opacity : arrO[a]
+								},500);
+							});
+							index = nowIndex;
+						},300);
+					}
+
+					
+				});
+
+				function fn( x ){
+					$li.each(function(i){
+						arrW[i] = $(this).css('width');
+						arrH[i] = $(this).css('height');
+						arrL[i] = $(this).css('left');
+						arrT[i] = $(this).css('top');
+						arrZ[i] = $(this).css('zIndex');
+						arrS[i] = $(this).find('span').css('display');
+						arrO[i] = $(this).css('opacity');
+					});
+					$li.each(function(i){
+						if ( x )
+						{
+							var a = i-1;
+							if(a<0)a=$li.length-1;
+						}
+						else
+						{
+							var a = i+1;
+							if(a==$li.length)a=0;
+						}
+						
+						$(this).find('span').css('display' , arrS[a]);
+						$(this).css('zIndex' , arrZ[a]).animate({
+							width : arrW[a],
+							height : arrH[a],
+							left : arrL[a],
+							top : arrT[a],
+							opacity : arrO[a]
+						},500);
+					});
+				}
+
+
+			})();
+
+		</script>
+
+	</body>
+
+</html>
